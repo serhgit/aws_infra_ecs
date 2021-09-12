@@ -1,5 +1,5 @@
 #Environment
-environment = "prod"
+environment = "development"
 
 #AWS CLI Profile
 aws_profile = "default"
