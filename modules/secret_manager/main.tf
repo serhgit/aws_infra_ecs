@@ -1,5 +1,6 @@
 resource "aws_secretsmanager_secret" "rds" {
-  name = "${var.environment}_${var.cluster}_rds_${var.environment}"
+  name                    = "${var.environment}_${var.cluster}_rds_${var.environment}"
+  recovery_window_in_days = 0
 }
 
 resource "aws_secretsmanager_secret_version" "rds" {
