@@ -10,7 +10,7 @@ pipeline {
     			secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
 			]]) { 
                   	sh 'echo ${AWS_ACCESS_KEY_ID}'
-		    	sh 'terraform init'
+		    	sh 'terraform init -migrate-state'
 		    	sh 'terraform apply -destroy -auto-approve -var-file=ecs.tfvars'
                 }
             }
