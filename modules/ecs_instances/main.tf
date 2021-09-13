@@ -142,7 +142,7 @@ resource "aws_lb" "web_lb" {
 }
 
 resource "aws_lb_target_group" "web_lb_http_target" {
-  name     = "${var.environment}-${var.cluster}web-lb-http-target"
+  name     = "${var.environment}-web-lb-http-target"
   port     = 80
   protocol = "HTTP"
   vpc_id   = var.vpc_id
