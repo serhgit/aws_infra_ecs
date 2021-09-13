@@ -10,7 +10,7 @@ resource "aws_db_subnet_group" "aurora_db_subnet_group" {
 }
 resource "aws_rds_cluster" "aurora_mysql_cluster" {
 
-  cluster_identifier = "aurora-mysql-cluster"
+  cluster_identifier = "${var.environment}-aurora-mysql-cluster"
   db_subnet_group_name   = aws_db_subnet_group.aurora_db_subnet_group.name
   engine                 = "aurora-mysql"
   engine_mode            = "provisioned"
