@@ -28,7 +28,7 @@ resource "aws_rds_cluster" "aurora_mysql_cluster" {
 
 resource "aws_rds_cluster_instance" "aurora_mysql_cluster_instance" {
   count = var.size
-  identifier         = "aurora-mysql-cluster-${count.index}"
+  identifier         = "${var.environment}-aurora-mysql-cluster-${count.index}"
   cluster_identifier = aws_rds_cluster.aurora_mysql_cluster.id
   instance_class     = var.instance_type
   engine             = aws_rds_cluster.aurora_mysql_cluster.engine
