@@ -1,6 +1,5 @@
 resource "aws_iam_role" "ecs_instance_role" {
   name = "${var.environment}_${var.cluster}_ecs_instance_role"
-
   assume_role_policy = <<EOF
 {
   "Version": "2008-10-17",
@@ -59,6 +58,7 @@ resource "aws_iam_role_policy_attachment" "ecs_ec2_cloudwatch_role" {
 
 resource "aws_iam_role" "ecs_tasks_instance_role" {
   name = "${var.environment}_${var.cluster}_ecs_tasks_instance_role"
+  path = "/prod_ecs_instace_role/prod/"
 
   assume_role_policy = <<EOF
 {
